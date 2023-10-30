@@ -22,7 +22,7 @@ int check_cycle(listint_t *list)
 		if (node == check)
 			return (1);
 		node = check;
-		check = node->next;
+		check = check->next;
 	}
 	return (0);
 }
