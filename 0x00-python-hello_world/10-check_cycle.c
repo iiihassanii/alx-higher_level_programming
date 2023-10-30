@@ -7,14 +7,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *node = list, *nnode = list->next;
+	listint_t *node = list, *nnode = list;
 
 	while (nnode && nnode->next)
 	{
-		if (node == nnode)
-			return (1);
 		node = node->next;
 		nnode = nnode->next->next;
+		if (node == nnode)
+                        return (1);
 	}
 	return (0);
 }
