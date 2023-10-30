@@ -1,28 +1,20 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * check_cycle - function checks cycle
- * @list: beginning of the node
+ * @list: pointer to the node
  * Return: 0 if no cycle, 1 if there is a cycle
  */
-
 int check_cycle(listint_t *list)
 {
-	listint_t *node, *check;
+	listint_t *node = list, *nnode = list->next;
 
-	if (list == NULL || list->next == NULL)
-		return (0);
-	node = list;
-	check = node->next;
-
-	while (check && check->next)
+	while (nnode && nnode->next)
 	{
-		if (node == check)
+		if (node == nnode)
 			return (1);
-		node = check;
-		check = check->next->next;
+		node = node->next;
+		nnode = nnode->next->next;
 	}
 	return (0);
 }
