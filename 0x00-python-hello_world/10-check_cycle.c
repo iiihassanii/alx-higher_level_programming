@@ -21,7 +21,7 @@ int check_cycle(listint_t *list)
 	{
 		if (node == check)
 			return (1);
-		node = list;
+		node = check;
 		check = node->next;
 	}
 	return (0);
