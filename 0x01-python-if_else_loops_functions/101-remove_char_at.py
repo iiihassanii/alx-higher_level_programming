@@ -1,4 +1,7 @@
 #!/usr/bin/python3
 def remove_char_at(str, n):
-    strcpy = str[:n] + str[n+1:]
-    return(strcpy)
+    if n > 0:
+        strcpy = str[:n] + str[n+1:]
+    else:
+        rtrcpt = str
+    return (strcpy)
