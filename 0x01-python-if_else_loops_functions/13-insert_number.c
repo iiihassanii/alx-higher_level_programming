@@ -1,13 +1,14 @@
-#include "list.h"
+#include "lists.h"
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *insert, node = *head;
+	listint_t *insert, *node = *head;
 
 	insert->n = number;
 
-	if(!head || *head)
+	if(!head || !*head)
 		return (NULL);
+
 	while (node)
 	{
 		if(number > node->n)
@@ -15,9 +16,10 @@ listint_t *insert_node(listint_t **head, int number)
 			if(!node->next)
 			{
 				node->next = insert;
+				insert->next = NULL;
 				return (insert);
 			}
-			else if (node->next->n < number)
+			else if (node->next->n > number)
 			{
 				insert->next = node->next;
 				node->next = insert;
