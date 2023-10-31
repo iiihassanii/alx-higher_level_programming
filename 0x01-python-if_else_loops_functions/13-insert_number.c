@@ -1,9 +1,11 @@
 #include "lists.h"
+#include <stdlib.h>
 
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *insert, *node = *head;
 
+	insert = malloc(sizeof(listint_t));
 	insert->n = number;
 
 	if(!head || !*head)
