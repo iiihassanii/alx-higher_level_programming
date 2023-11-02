@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     import sys
-    oprs = ['+': add, '-': sub, '*': mul, '/': div]
+    oprs = {'+': add, '-': sub, '*': mul, '/': div}
     counter = len(sys.argv) - 1
     if counter != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
