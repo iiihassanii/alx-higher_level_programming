@@ -29,8 +29,8 @@ int is_palindrome(listint_t **head)
 
 	while (tmp != NULL)
 	{
-		tmp = tmp->next->next;
-		count+=2;
+		tmp = tmp->next;
+		count++;
 	}
 
 	tcount = count;
