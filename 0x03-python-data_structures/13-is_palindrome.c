@@ -2,16 +2,25 @@
 #include <stdlib.h>
 #include "lists.h"
 
-listint_t *idx_node(listint_t **head, int tcount)
-{
-	int i = 0;
-	listint_t *Lnode = *head;
+/**
+ * reverse_listint - reverses a linked list
+ * @head: head node
+ * Return: the new head
+ */
 
-	while (i++ < tcount - 1)
+void reverse_listint(listint_t **head)
+{
+	listint_t *new = *head, *prev = NULL, *next;
+
+	while (new)
 	{
-		Lnode = Lnode->next;
+		next = new->next;
+		new->next = prev;
+		prev = new;
+		new = next;
 	}
-	return (Lnode);
+	*head = prev;
+	
 }
 
 /**
@@ -22,26 +31,39 @@ listint_t *idx_node(listint_t **head, int tcount)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *Bnode = *head, *tmp = *head;
-	int count = 0,  tcount, i = 0;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *half = NULL;
+	
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	while (tmp != NULL)
+	while (1)
 	{
-		tmp = tmp->next->next;
-		count+=2;
+		fast = fast->next->next;
+		if (!fast)
+		{
+			half = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			half = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
 
-	tcount = count;
+	reverse_listint(&half);
 
-	while (i++ < count/2)
+	while (half && temp)
 	{
-		tmp = idx_node(head, tcount--);
-
-		if (tmp->n != Bnode->n)
+		if (temp->n == half->n)
+		{
+			half = half->next;
+			temp = temp->next;
+		}
+		else
 			return (0);
-		Bnode = Bnode->next;
 	}
+
 	return (1);
 }
