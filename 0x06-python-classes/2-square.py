@@ -4,12 +4,13 @@
 
 class Square:
     """Represents a square with a given size."""
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """
         Initializes a new instance of the Square class.
 
         Args:
-            size (int, optional): The length of the square's sides. Defaults to 0.
+            size (int, optional): The length of the square's sides.
+            Defaults to 0.
 
         Raises:
             TypeError: If size is not an integer.
