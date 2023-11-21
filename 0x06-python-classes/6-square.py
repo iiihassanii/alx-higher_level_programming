@@ -1,5 +1,8 @@
+#!/usr/bin/python3
+
 class Square:
     """Represents a square with a given size."""
+
 
     def __init__(self, size=0, position=(0, 0)):
         """
