@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""yaaa naasss 5laaas"""
+
 
 class Square:
     """Represents a square with a given size."""
