@@ -67,4 +67,6 @@ class Square:
             None
         """
         for i in range(self.__size):
-            print("#" * self.__size)
+            for j in range(self.__size):
+                print("#", end="")
+            print()
