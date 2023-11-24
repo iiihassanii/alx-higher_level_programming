@@ -26,9 +26,14 @@ The function adds two negative numbers and returns the result.
 	>>> add_integer(-5, -3)
 	-8
 
+Send one agrmunt to the function
+	>>> add_integer(1)
+	99
+
 The function raises a TypeError if a is not an integer or float.
 	>>> add_integer("2", 3)
 	Traceback (most recent call last):
+	...
 	TypeError: a must be an integer
 
 The function raises a TypeError if b is not an integer or float.
@@ -36,3 +41,15 @@ The function raises a TypeError if b is not an integer or float.
 	Traceback (most recent call last):
 	TypeError: b must be an integer
 
+
+Send three argmunts to the function
+	>>> add_integer(1, 1, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Send no argmunt to the function
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'

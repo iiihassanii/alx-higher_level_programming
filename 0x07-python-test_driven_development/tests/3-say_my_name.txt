@@ -1,0 +1,40 @@
+The 3-say_my_name
+======================
+Using say_my_name
+-------------------
+Import the module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+The function is called with a valid first name and last name, and it prints the correct message.
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+The function is called with only a valid first name, and it prints the correct message.
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+The function is called with an empty string as last name, and it prints the correct message.
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+The function is called with an empty string as first_name and last name, and it prints the correct message.
+    >>> say_my_name("")
+    My name is  
+
+The function is called with a non-string first name, and it raises a TypeError.
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+The function is called with a non-string last name, and it raises a TypeError.
+    >>> say_my_name("Hassan", 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+The function is called with 3 argmunts
+    >>> say_my_name("hassan", "Abdelazim", "souliman")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
