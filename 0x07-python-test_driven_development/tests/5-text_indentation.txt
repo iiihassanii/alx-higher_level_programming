@@ -1,0 +1,65 @@
+The 5-text_indentation
+======================
+Using 5-text_indentation
+-------------------
+Import the module:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+The function receives a string as input and returns nothing.
+    >>> text_indentation("hassan .")
+    hassan .
+    <BLANKLINE>
+
+
+The function correctly handles multiple occurrences of '.', '?' or ':' in a row.
+    >>> text_indentation("hassan ..")
+    hassan .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+
+The function correctly handles spaces.
+    >>> text_indentation("hassan .          ?")
+    hassan .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+
+The function correctly handles multiple occurrences of '.', '?' or ':'.
+    >>> text_indentation("""Lorem ipsum dolor? sit amet, consectetur: adipiscing elit. Quonam modo?""")
+    Lorem ipsum dolor?
+    <BLANKLINE>
+    sit amet, consectetur:
+    <BLANKLINE>
+    adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+
+The function raises a TypeError if the input is not a string.
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+The function correctly handles empty strings.
+    >>> text_indentation("")
+
+The function correctly handles strings with only whitespaces.
+    >>> text_indentation("      ")
+          
+The function with no argument.
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+The function with more then one argument.
+    >>> text_indentation("hi", "Hassan")
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+
