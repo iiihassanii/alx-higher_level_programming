@@ -93,10 +93,11 @@ class Rectangle:
         Returns:
             _type_: _description_
         """
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ''
-        rectangle_str = ''
+        rectangle = ''
 
-        for _ in range(self.__height):
-            rectangle_str += '#' * self.__width + '\n'
-        return rectangle_str
+        for _ in range(self.height):
+            rectangle += '#' * self.width + '\n'
+        rectangle = rectangle[:-1]
+        return rectangle
