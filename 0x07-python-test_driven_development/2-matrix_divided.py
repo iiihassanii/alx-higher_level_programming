@@ -4,6 +4,11 @@
 
 def matrix_divided(matrix, div):
     """Divides all elements in the matrix by div"""
+
+    if not isinstance(matrix, list) or any(not isinstance(i, list) for i in matrix):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
+
     # check if all int or float
     size = -1
     for row in matrix:

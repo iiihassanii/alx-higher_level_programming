@@ -1,6 +1,6 @@
 The add_integer module
 ======================
-Using add two integer
+Using ``add two integer``
 -------------------
 import the model
 	>>> add_integer = __import__('0-add_integer').add_integer
