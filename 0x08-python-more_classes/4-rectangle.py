@@ -103,4 +103,9 @@ class Rectangle:
         return rectangle
 
     def __repr__(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return "Rectangle({}, {})".format(self.width, self.height)
