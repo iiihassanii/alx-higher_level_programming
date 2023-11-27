@@ -4,6 +4,9 @@
 
 
 class Rectangle:
+    """_summary_
+    """
+
     def __init__(self, width=0, height=0):
         """_summary_
 
