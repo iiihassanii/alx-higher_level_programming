@@ -102,7 +102,9 @@ class Rectangle:
 
         rectangle = ''
         for _ in range(self.height):
-            rectangle += Rectangle.print_symbol * self.width + '\n'
+            for i in range(self.width):
+                rectangle += str(self.print_symbol)
+            rectangle += '\n'
         rectangle = rectangle[:-1]
         return rectangle
 
