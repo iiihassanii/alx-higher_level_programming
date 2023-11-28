@@ -3,7 +3,7 @@
     """
 
 
-def copy_list(l):
+def copy_list(lst):
     """_summary_
 
     Args:
@@ -13,6 +13,6 @@ def copy_list(l):
         _type_: _description_
     """
     rlist = []
-    for i in l:
+    for i in lst:
         rlist.append(i)
     return rlist
