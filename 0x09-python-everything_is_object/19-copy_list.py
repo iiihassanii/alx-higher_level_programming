@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""_summary_
-    """
+"""_summary_"""
 
 
 def copy_list(lst):
