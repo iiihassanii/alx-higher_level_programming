@@ -1,0 +1,2 @@
+0
+script only contains string literals, which are immutable objects in Python
