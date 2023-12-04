@@ -26,11 +26,7 @@ can sort and print an empty MyList instance
         >>> print(my_list)
         []
 
-print_sorted method is an instance method:
-    >>> type(MyList.__dict__['print_sorted'])
-    <class 'function'>
-    
-Correct Class Type test:
-    >>> ml = MyList()
-    >>> type(ml) == MyList
-    True
+print_sorted method called with 2 args:
+    >>> my_list.print_sorted([4, 2, 5], 1)
+    Traceback (most recent call last):
+    TypeError: print_sorted() takes 1 positional argument but 3 were given
