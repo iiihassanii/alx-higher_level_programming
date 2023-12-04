@@ -18,4 +18,17 @@ send bool and int
     >>> my_list.print_sorted()
     [True, 2, 5]
 
+negative numbers
+    >>> test = [-1, -2, -3]
+    >>> my_list = MyList(test)
+    >>> my_list.print_sorted()
+    [-3, -2, -1]
+
+negative numbers
+    >>> test = []
+    >>> my_list = MyList(test)
+    >>> my_list.print_sorted()
+    []
+
+
 
