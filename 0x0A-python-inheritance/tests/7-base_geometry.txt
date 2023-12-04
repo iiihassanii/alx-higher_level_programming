@@ -103,3 +103,11 @@ Passing list to method
     Traceback (most recent call last):
     	      ...
     TypeError: age must be an integer
+
+Passing dict
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", {7, 7})
+    Traceback (most recent call last):
+              ...
+    TypeError: age must be an integer
+
