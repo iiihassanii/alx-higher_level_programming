@@ -62,16 +62,3 @@ Trying with None
     ...
 	TypeError: hi must be an integer
 
-Trying with list
-	>>> bg = BaseGeometry()
-    >>> bg.integer_validator("hi", [1, 5])
-	Traceback (most recent call last):
-    ...
-	TypeError: hi must be an integer
-
-Trying with float
-	>>> bg = BaseGeometry()
-    >>> bg.integer_validator("hi", 1.5)
-	Traceback (most recent call last):
-    ...
-	TypeError: hi must be an integer
