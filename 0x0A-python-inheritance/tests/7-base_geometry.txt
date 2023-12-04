@@ -58,7 +58,7 @@ Integer_validator with no arguments
 Trying with None
 	>>> bg = BaseGeometry()
     >>> bg.integer_validator("hi", None)
-	Traceback (most recent call last):
+    Traceback (most recent call last):
     ...
-	TypeError: hi must be an integer
+    TypeError: hi must be an integer
 
