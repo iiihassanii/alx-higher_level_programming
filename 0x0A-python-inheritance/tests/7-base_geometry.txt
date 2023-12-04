@@ -47,9 +47,10 @@ Trying to pass a non-integer argument
     TypeError: name must be an integer
 
 
-arguments missing
-	>>> test = BaseGeometry
-	>>> print(test.integer_validator(0))
-	Traceback (most recent call last):
-    	      ...
-	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Integer_validator with no arguments
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
