@@ -52,5 +52,26 @@ Integer_validator with no arguments
     >>> bg = BaseGeometry()
     >>> bg.integer_validator()
     Traceback (most recent call last):
-    ...
+    	      ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Trying with None
+	>>> bg = BaseGeometry()
+    >>> bg.integer_validator("hi", None)
+	Traceback (most recent call last):
+    	      ...
+	TypeError: hi must be an integer
+
+Trying with list
+	>>> bg = BaseGeometry()
+    >>> bg.integer_validator("hi", [1, 5])
+	Traceback (most recent call last):
+    	      ...
+	TypeError: hi must be an integer
+
+Trying with float
+	>>> bg = BaseGeometry()
+    >>> bg.integer_validator("hi", 1.5)
+	Traceback (most recent call last):
+    	      ...
+	TypeError: hi must be an integer
