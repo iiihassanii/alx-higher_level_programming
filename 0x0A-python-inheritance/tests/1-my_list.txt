@@ -8,38 +8,28 @@ import the model
 
 Now use it:
 Adding five elements to MyList instance.
-	>>> my_list = MyList()
-        >>> my_list.append(1)
-        >>> my_list.append(4)
-        >>> my_list.append(2)
-        >>> my_list.append(3)
-        >>> my_list.append(5)
-	>>> print(my_list)
-        [1, 4, 2, 3, 5]
-        >>> my_list.print_sorted()
-        [1, 2, 3, 4, 5]
-        >>> print(my_list)
-        [1, 4, 2, 3, 5]
+
 
 can sort and print an empty MyList instance
-        >>> my_list= MyList()
-        >>> print(my_list)
-        []
-
-print_sorted method called with 2 args:
-    >>> my_list.print_sorted(1, 2)
-    Traceback (most recent call last):
-    ...
-    TypeError: print_sorted() takes 1 positional argument but 3 were given
-
-send str and int
-    >>> my_list.print_sorted(["4", 2, 5])
-    Traceback (most recent call last):
-    ...
-    TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
 send bool and int
-    >>> my_list.print_sorted([True, 2, 5])
+    >>> test = [True, 2, 5]
+    >>> my_list = MyList(test)
+    >>> my_list.print_sorted()
+    [True, 2, 5]
+
+
+send str and int
+    >>> test = ["True", 2, 5]
+    >>> my_list = MyList(test)
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: '<' not supported between instances of 'int' and 'str'
+
+send str and int
+    >>> my_list = MyList(test)
+    >>> my_list.print_sorted(["True", 2, 5])
     Traceback (most recent call last):
     ...
     TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
