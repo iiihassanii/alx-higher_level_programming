@@ -82,3 +82,17 @@ Passing one argument to area method
     Traceback (most recent call last):
     	      ...
     TypeError: area() takes 1 positional argument but 2 were given
+
+Passing one argument to area method
+    >>> bg = BaseGeometry()
+    >>> bg.area(5)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: area() takes 1 positional argument but 2 were given
+
+Passing tuple to method
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", (1,))
+    Traceback (most recent call last):
+    	      ...
+    TypeError: age must be an integer
