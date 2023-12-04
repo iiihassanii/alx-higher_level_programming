@@ -39,17 +39,17 @@ Trying to print the area
     Exception: area() is not implemented
 
 
-Trying to print the area
-    >>> bg = BaseGeometry()
-    >>> bg.area()
-    Traceback (most recent call last):
-    	      ...
-    Exception: area() is not implemented
-
-
 Trying to pass a non-integer argument
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("name", "5")
     Traceback (most recent call last):
     	      ...
     TypeError: name must be an integer
+
+
+arguments missing
+	>>> test = BaseGeometry
+	>>> print(test.integer_validator(0))
+	Traceback (most recent call last):
+  	...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
