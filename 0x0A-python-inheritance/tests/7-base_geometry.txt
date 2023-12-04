@@ -75,3 +75,10 @@ Trying with float
     Traceback (most recent call last):
     ...
     TypeError: hi must be an integer
+
+Trying with float
+	>>> bg = BaseGeometry()
+    >>> bg.area("hi", 1.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.area() takes 1 positional argument but 3 were given
