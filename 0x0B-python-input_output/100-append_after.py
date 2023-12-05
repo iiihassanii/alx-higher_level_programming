@@ -4,17 +4,18 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """
+    """_summary_
+
     Args:
-        filename (str): The name of the file.
-        search_string (str): The string
-        new_string (str): The string to insert.
+        filename (str, optional): _description_. Defaults to "".
+        search_string (str, optional): _description_. Defaults to "".
+        new_string (str, optional): _description_. Defaults to "".
     """
     text = ""
-    with open(filename) as file1:
-        for line in file1:
+    with open(filename) as readf:
+        for line in readf:
             text += line
             if search_string in line:
                 text += new_string
-    with open(filename, "w") as file:
-        file.write(text)
+    with open(filename, "w") as writef:
+        writef.write(text)
