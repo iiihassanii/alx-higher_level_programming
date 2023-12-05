@@ -4,9 +4,6 @@
 
 class Student:
     """class Student"""
-    first_name = ""
-    last_name = ""
-    age = 0
 
     def __init__(self, first_name, last_name, age):
         """_summary_
@@ -16,9 +13,9 @@ class Student:
             last_name (_type_): _description_
             age (_type_): _description_
         """
-        Student.first_name = first_name
-        Student.last_name = last_name
-        Student.age = age
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
     def to_json(self):
         return Student.__dict__
