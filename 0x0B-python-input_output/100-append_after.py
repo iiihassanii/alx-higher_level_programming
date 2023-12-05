@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""text file insertion function."""
+"""_summary_
+    """
 
 
 def append_after(filename="", search_string="", new_string=""):
     """
-
     Args:
         filename (str): The name of the file.
         search_string (str): The string
@@ -18,4 +18,3 @@ def append_after(filename="", search_string="", new_string=""):
                 text += new_string
     with open(filename, "w") as file:
         file.write(text)
-
