@@ -15,6 +15,8 @@ class Rectangle(Base):
         super().__init__(id)
 
     def update(self, *args, **kwargs):
+        """_summary_
+        """
         # if args is None:
         #   self.__init__(self.width, self.height, self.x, self.y)
         if args:
@@ -43,6 +45,8 @@ class Rectangle(Base):
         }
 
     def display(self):
+        """print '#' n times
+        """
         print("\n" * self.y, end="")
         for row in range(self.__height):
             print(" " * self.x, end="")
@@ -55,6 +59,11 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def __str__(self) -> str:
+        """_summary_
+
+        Returns:
+            str: _description_
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
