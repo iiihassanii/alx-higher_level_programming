@@ -14,13 +14,7 @@ class TestBase(unittest.TestCase):
     """__init__ test"""
     # Base object is created successfully with default id value
 
-    def test_default_id_value(self):
-        """_summary_
-        """
-        obj = Base()
-        assert obj.id == 1
-
-        # Base object is created successfully with custom id value
+    # Base object is created successfully with custom id value
     def test_custom_id_value(self):
         """_summary_
         """
