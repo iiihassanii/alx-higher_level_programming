@@ -90,7 +90,8 @@ class TestRectangle(unittest.TestCase):
         assert rectangle.x == 0
         assert rectangle.y == 0
 
-    # update with two arguments should update the rectangle's id and width attributes
+    # update with two arguments should update
+    #  the rectangle's id and width attributes
     def test_two_arguments(self):
         """_summary_
         """
@@ -120,7 +121,8 @@ class TestRectangle(unittest.TestCase):
             rectangle.update(1, 8, "10")
 
     """to_dictionary tests"""
-    # Returns a dictionary with the correct keys and values for a rectangle object.
+    # Returns a dictionary with the correct
+    #  keys and values for a rectangle object.
 
     def test_correct_keys_and_values_for_rectangle_object(self):
         """_summary_
@@ -135,7 +137,8 @@ class TestRectangle(unittest.TestCase):
         }
         assert rectangle.to_dictionary() == expected_dict
 
-    # Returns a dictionary with the correct keys and values for a rectangle object with maximum values.
+    # Returns a dictionary with the correct keys
+    #  and values for a rectangle object with maximum values.
     def test_correct_keysvalues(self):
         """_summary_
         """
@@ -198,7 +201,8 @@ class TestRectangle(unittest.TestCase):
 
     """area tests"""
 
-    # Calculate the area of a rectangle with positive integer width and height values
+    # Calculate the area of a rectangle with
+    # positive integer width and height values
     def test_positive_integer_values(self):
         """_summary_
         """
@@ -212,7 +216,8 @@ class TestRectangle(unittest.TestCase):
         rectangle = Rectangle(1, 1)
         assert rectangle.area() == 1
 
-    # Calculate the area of a rectangle with width and height values equal to the maximum integer value
+    # Calculate the area of a rectangle with width
+    # and height values equal to the maximum integer value
     def test_width_and_height_equal_to_maximum_integer_value(self):
         """_summary_
         """
@@ -244,7 +249,9 @@ class TestRectangle(unittest.TestCase):
             rectangle.area()
 
     """__str__ tests"""
-    # Returns a string with the format "[Rectangle] ({id}) {x}/{y} - {width}/{height}" when called on a Rectangle object with valid attributes.
+    # Returns a string with the format "[Rectangle]
+    #  ({id}) {x}/{y} - {width}/{height}" when
+    # called on a Rectangle object with valid attributes.
 
     def test_valid_attributes(self):
         """_summary_

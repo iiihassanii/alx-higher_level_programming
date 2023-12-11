@@ -37,7 +37,7 @@ class TestBase(unittest.TestCase):
         obj = Base(-5)
         assert obj.id == -5
 
- # Initializes an instance of the Base class with no arguments
+    # Initializes an instance of the Base class with no arguments
     def test_init_with_no_arguments(self):
         """_summary_
         """
@@ -51,7 +51,7 @@ class TestBase(unittest.TestCase):
         base = Base(5)
         assert base.id == 5
 
-    # Initializes multiple instances of the Base class with different ID arguments
+    # Initializes multiple instances of
     def test_init_with_different_id_arguments(self):
         """_summary_
         """
@@ -69,7 +69,7 @@ class TestBase(unittest.TestCase):
         base = Base(0)
         assert base.id == 0
 
-    # Initializes an instance of the Base class with ID argument as a negative integer
+    # Initializes an instance
     def test_init_with_negative_id_argument(self):
         """_summary_
         """
@@ -111,7 +111,8 @@ class TestBase(unittest.TestCase):
         # Assert
         assert isinstance(result, dict)
 
-    # Returns the correct Python object when given a JSON string representing a list
+    # Returns the correct Python object when
+    # given a JSON string representing a list
     def test_returns__list(self):
         """_summary_
         """
@@ -160,7 +161,8 @@ class TestBase(unittest.TestCase):
         with pytest.raises(TypeError):
             Base.from_json_string(json_string)
 
-    # Returns the correct Python object when given a JSON string representing a dictionary
+    # Returns the correct Python object
+    # when given a JSON string representing a dictionary
     def test_returns_correct_object_with_dictionary_input(self):
         """_summary_
         """
@@ -173,7 +175,8 @@ class TestBase(unittest.TestCase):
         # Assert
         assert result == {"name": "John", "age": 30}
 
-    # Returns the correct Python object when given a JSON string representing a nested dictionary
+    # Returns the correct Python object when
+    # given a JSON string representing a nested dictionary
     def test_returns_correct_object_with_nested_dictionary_input(self):
         """_summary_
         """
@@ -186,12 +189,14 @@ class TestBase(unittest.TestCase):
         # Assert
         assert result == {"person": {"name": "John", "age": 30}}
 
-    # Returns the correct Python object when given a JSON string representing a list of dictionaries
+    # Returns the correct Python object when
+    #  given a JSON string representing a list of dictionaries
     def test_returns_correct_object_with_list_of_dictionaries_input(self):
         """_summary_
         """
         # Arrange
-        json_string = '[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
+        json_string = '[{"name": "John", "age": 30}\
+            , {"name": "Jane", "age": 25}]'
 
         # Act
         result = Base.from_json_string(json_string)
@@ -241,7 +246,8 @@ class TestBase(unittest.TestCase):
         # Assert
         assert result == "[]"
 
-    # Returns an empty list as a JSON string when given an empty string.
+    # Returns an empty list as a JSON string
+    # when given an empty string.
     def test_empty_string(self):
         """_summary_
         """
@@ -254,7 +260,8 @@ class TestBase(unittest.TestCase):
         # Assert
         assert result == "[]"
 
-    # Returns a JSON string representation of a list of dictionaries.
+    # Returns a JSON string representation
+    # of a list of dictionaries.
     def test_list_of_dictionaries(self):
         """_summary_
         """
@@ -265,7 +272,8 @@ class TestBase(unittest.TestCase):
         result = Base.to_json_string(my_obj)
 
         # Assert
-        assert result == '[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
+        assert result == '[{"name": "John", "age": 30}\
+            , {"name": "Jane", "age": 25}]'
 
     # Returns a JSON string representation of a list of integers.
     def test_list_of_integers(self):
@@ -297,9 +305,10 @@ class TestBase(unittest.TestCase):
             data = file.read()
             assert data == '[]'
 
-    # If an object in list_objs does not have a to_dictionary method, raises an AttributeError.
+    # If an object in list_objs does not
+    # have a to_dictionary method, raises an AttributeError.
 
-    def test_save_to_file_raise_attribute_error_if_object_does_not_have_to_dictionary_method(self):
+    def test_save_to_file_dictionary_method(self):
         """_summary_
         """
         # Arrange
@@ -374,7 +383,8 @@ class TestBase(unittest.TestCase):
         with open("Base.json", "w") as file:
             file.write("{invalid_json}")
 
-        # Check if loading objects from the JSON file with invalid JSON raises an exception
+        # Check if loading objects from the JSON
+        #  file with invalid JSON raises an exception
         with pytest.raises(json.JSONDecodeError):
             obj.load_from_file()
 
@@ -389,7 +399,8 @@ class TestBase(unittest.TestCase):
         with open("Base.json", "w") as file:
             file.write('{"id": 1}')
 
-        # Check if loading objects from the JSON file with a non-list object raises an exception
+        # Check if loading objects from the JSON
+        #  file with a non-list object raises an exception
         with pytest.raises(TypeError):
             obj.load_from_file()
 
