@@ -23,7 +23,8 @@ class Square(Rectangle):
         Returns:
             str: _description_
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.height)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.height)
 
     def update(self, *args, **kwargs):
         """_summary_
