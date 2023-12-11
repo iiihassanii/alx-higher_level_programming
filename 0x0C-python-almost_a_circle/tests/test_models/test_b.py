@@ -4,7 +4,6 @@
 
 import unittest
 from models.base import Base
-import pytest
 import json
 from models.base import Base
 from models.square import Square
@@ -147,7 +146,7 @@ class TestBase(unittest.TestCase):
         json_string = '{"name": "John", "age": 30,}'
 
         # Act and Assert
-        with pytest.raises(json.JSONDecodeError):
+        with self.assertRaises(json.JSONDecodeError):
             Base.from_json_string(json_string)
 
     # Raises a TypeError when given a non-string input
@@ -158,7 +157,7 @@ class TestBase(unittest.TestCase):
         json_string = 123
 
         # Act and Assert
-        with pytest.raises(TypeError):
+        with self.assertRaises(TypeError):
             Base.from_json_string(json_string)
 
     # Returns the correct Python object
@@ -310,7 +309,7 @@ class TestBase(unittest.TestCase):
         list_objs = [obj1, obj2]
 
         # Act and Assert
-        with pytest.raises(AttributeError):
+        with self.assertRaises(AttributeError):
             Base.save_to_file(list_objs)
 
     """load_from_file test"""
@@ -358,7 +357,7 @@ class TestBase(unittest.TestCase):
             file.write("This is not a JSON file")
 
         # Check if loading objects from the non-JSON file raises an exception
-        with pytest.raises(json.JSONDecodeError):
+        with self.assertRaises(json.JSONDecodeError):
             obj.load_from_file()
 
     # Raises an exception if the file contains invalid JSON
@@ -374,7 +373,7 @@ class TestBase(unittest.TestCase):
 
         # Check if loading objects from the JSON
         #  file with invalid JSON raises an exception
-        with pytest.raises(json.JSONDecodeError):
+        with self.assertRaises(json.JSONDecodeError):
             obj.load_from_file()
 
     # Raises an exception if the list of objects in the file is not a list
@@ -390,7 +389,7 @@ class TestBase(unittest.TestCase):
 
         # Check if loading objects from the JSON
         #  file with a non-list object raises an exception
-        with pytest.raises(TypeError):
+        with self.assertRaises(TypeError):
             obj.load_from_file()
 
     def test_id(self):

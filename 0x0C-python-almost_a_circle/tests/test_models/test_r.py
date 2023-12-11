@@ -8,7 +8,7 @@ import sys
 from io import StringIO
 import io
 from models.rectangle import Rectangle
-import pytest
+from unittest import TestCase
 import json
 
 
@@ -56,14 +56,14 @@ class TestRectangle(unittest.TestCase):
     def test_init_with_negative_width(self):
         """_summary_
         """
-        with pytest.raises(ValueError):
+        with self.assertRaises(ValueError):
             rectangle = Rectangle(-5, 10, 2, 3, 1)
 
     # Initializes a Rectangle object with negative height.
     def test_init_with_negative_height(self):
         """_summary_
         """
-        with pytest.raises(ValueError):
+        with self.assertRaises(ValueError):
             rectangle = Rectangle(5, -10, 2, 3, 1)
 
     """update tests"""
@@ -109,16 +109,22 @@ class TestRectangle(unittest.TestCase):
     def test_negative_width(self):
         """_summary_
         """
+        # Arrange
         rectangle = Rectangle(5, 10)
-        with pytest.raises(ValueError):
+
+        # Assert
+        with self.assertRaises(ValueError):
             rectangle.update(1, -8)
 
     # update with a non-integer height argument should raise a TypeError
     def test_non_integer_height(self):
         """_summary_
         """
+        # Arrange
         rectangle = Rectangle(5, 10)
-        with pytest.raises(TypeError):
+
+        # Assert
+        with self.assertRaises(TypeError):
             rectangle.update(1, 8, "10")
 
     """to_dictionary tests"""
@@ -229,7 +235,8 @@ class TestRectangle(unittest.TestCase):
     def test_width_not_an_integer(self):
         """_summary_
         """
-        with pytest.raises(TypeError):
+        # Assert
+        with self.assertRaises(TypeError):
             rectangle = Rectangle("5", 10)
             rectangle.area()
 
@@ -237,7 +244,7 @@ class TestRectangle(unittest.TestCase):
     def test_height_not_an_integer(self):
         """_summary_
         """
-        with pytest.raises(TypeError):
+        with self.assertRaises(TypeError):
             rectangle = Rectangle(5, "10")
             rectangle.area()
 
@@ -245,7 +252,8 @@ class TestRectangle(unittest.TestCase):
     def test_width_less_than_or_equal_to_0(self):
         """_summary_
         """
-        with pytest.raises(ValueError):
+        # Assert
+        with self.assertRaises(ValueError):
             rectangle = Rectangle(0, 10)
             rectangle.area()
 
