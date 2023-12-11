@@ -652,3 +652,7 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             content = f.read()
             self.assertEqual(str, type(content))
+
+
+if __name__ == "__main__":
+    unittest.main()

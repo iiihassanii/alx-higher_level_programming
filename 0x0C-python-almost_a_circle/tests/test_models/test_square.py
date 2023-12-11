@@ -7,6 +7,7 @@ class TestSquare(unittest.TestCase):
     """
         Testing square
     """
+
     def setUp(self):
         """
             Initialize an insatnce of square
@@ -249,3 +250,7 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([sq1])
         list_output = Square.load_from_file()
         self.assertEqual(sq1.width, list_output[0].size)
+
+
+if __name__ == "__main__":
+    unittest.main()
