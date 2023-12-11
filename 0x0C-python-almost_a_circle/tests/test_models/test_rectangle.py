@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
     unit test for models/rectangle.py
 """
