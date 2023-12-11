@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""_summary_
+    """
 import unittest
 import json
 from models.square import Square
