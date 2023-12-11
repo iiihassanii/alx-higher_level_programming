@@ -7,6 +7,9 @@ from models.base import Base
 import json
 from models.base import Base
 from models.square import Square
+from models.rectangle import Rectangle
+from models.square import Square
+import os
 
 
 class TestBase(unittest.TestCase):
