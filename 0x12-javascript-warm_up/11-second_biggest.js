@@ -10,7 +10,7 @@ if (len <= 3) {
     if (Number(process.argv[i]) > Number(process.argv[max])) {
       min = max;
       max = i;
-    } else if (Number(process.argv[i]) > process.argv[min]) { min = i; }
+    } else if (Number(process.argv[i]) < process.argv[min]) { min = i; }
   }
   console.log(process.argv[min]);
 }
