@@ -12,18 +12,13 @@ if __name__ == "__main__":
                          database=sys.argv[3], port=3306)
     cursor = db.cursor()
 
-    cursor.execute("""SELECT cities.name FROM cities 
+    cursor.execute("""SELECT cities.name FROM cities
                    JOIN states ON states.id=cities.state_id
                 WHERE states.name=%s""", (sys.argv[4],))
 
     result = cursor.fetchall()
-    tmp = list(row[0] for row in result)
-
-    for row in range(len(tmp)):
-        if row == len(tmp) - 1:
-            print(tmp[row])
-        else:
-            print(tmp[row], end=", ")
+    rows = list(row[0] for row in result)
+    print(*rows, sep=", ")
 
     cursor.close()
     db.close()
