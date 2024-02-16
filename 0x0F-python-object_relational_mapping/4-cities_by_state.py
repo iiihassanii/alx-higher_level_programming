@@ -10,7 +10,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute("""SELECT cities.id, cities.name, states.name
-                  FROM cities INNER JOIN states ON
+                  FROM cities LEFT JOIN states ON
                    states.id=cities.state_id""")
     result = cursor.fetchall()
     for row in result:
