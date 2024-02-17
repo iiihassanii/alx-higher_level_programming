@@ -17,5 +17,4 @@ if __name__ == "__main__":
     get_state = session.query(State).filter_by(id=2).first()
     get_state.name = 'New Mexico'
     print(get_state.id)
-    session.dirty
     session.commit()
