@@ -8,17 +8,14 @@ if __name__ == "__main__":
     repo = sys.argv[1]
     owner = sys.argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(
-        sys.argv[2], sys.argv[1])
+        owner, repo)
 
+    r = requests.get(url)
+    commits = r.json()
     try:
-        r = requests.get(url)
-        r.raise_for_status()
-        commits = r.json()
-
-    except requests.RequestException as e:
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
+    except IndexError:
         pass
-
-    for i in range(10):
-        print("{}: {}".format(
-            commits[i].get("sha"),
-            commits[i].get("commit").get("author").get("name")))
