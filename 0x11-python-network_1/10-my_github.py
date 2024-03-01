@@ -3,13 +3,12 @@
 (username and password) and uses the GitHub API to display your id"""
 import requests
 import sys
+from requests.auth import HTTPBasicAuth
 if __name__ == "__main__":
     username = sys.argv[1]
     passwd = sys.argv[2]
-    url = 'https://api.github.com/user'
+    url = 'https://api.github.com/{}'.format(username)
 
-    response = requests.get(url, auth=(username, passwd))
-    if response.json != '{}':
-        user_id = response.json().get('id')
-    else:
-        print(None)
+    response = requests.get(url, auth=HTTPBasicAuth(username, passwd))
+
+    print(response.json().get("id"))
