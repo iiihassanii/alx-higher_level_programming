@@ -9,17 +9,17 @@ if __name__ == "__main__":
     data = ""
     if len(sys.argv) == 2:
         data = sys.argv[1]
-    values = {'q': data}
+    values = {"q": data}
 
     try:
         response = requests.post(
             'http://0.0.0.0:5000/search_user', data=values)
         json_response = response.json()
 
-        if json_response != '{}':
+        if response == {}:
+            print("No result")
+        else:
             print("[{}] {}".format(json_response.get(
                 "id"), json_response.get("name")))
-        else:
-            print("No result")
     except ValueError:
         print("Not a valid JSON")
