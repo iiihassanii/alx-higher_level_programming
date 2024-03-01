@@ -4,9 +4,10 @@ sends a request to the URL and displays
 the body of the response (decoded in utf-8)."""
 from urllib import request, error
 import sys
-url = sys.argv[1]
-try:
-    with request.urlopen(sys.argv[1]) as response:
-        print(response.read().decode('UTF-8'))
-except error.URLError as e:
-    print("Error code: ", e.code)
+if __name__ == '__main__':
+    url = sys.argv[1]
+    try:
+        with request.urlopen(sys.argv[1]) as response:
+            print(response.read().decode('UTF-8'))
+    except error.URLError as e:
+        print("Error code: ", e.code)
