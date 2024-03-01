@@ -11,15 +11,13 @@ if __name__ == "__main__":
         data = sys.argv[1]
     print(data)
     values = {"q": data}
+    response = requests.post(
+        'http://0.0.0.0:5000/search_user', data=values)
 
     try:
-        response = requests.post(
-            'http://0.0.0.0:5000/search_user', data=values)
         json_response = response.json()
-
-        if "id" in json_response and "name" in json_response:
-            print("[{}] {}".format(json_response.get(
-                "id"), json_response.get("name")))
+        if json_response:
+            print("[{}] {}".format(json_response['id'], json_response['name']))
         else:
             print("No result")
     except ValueError:
