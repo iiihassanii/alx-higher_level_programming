@@ -10,4 +10,3 @@ if __name__ == "__main__":
     values = {'email': sys.argv[2]}
     response = requests.post(url, data=values)
     print(response.text)
-    print("h")
