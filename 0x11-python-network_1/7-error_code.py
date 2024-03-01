@@ -7,9 +7,9 @@ import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
-
-    r = requests.get(url)
-    if r.status_code >= 400:
-        print("Error code: {}".format(r.status_code))
+    response = requests.get(url)
+    status = response.status_code
+    if status >= 400:
+        print("Error code: {}".format(status))
     else:
-        print(r.text)
+        print(response.text)
