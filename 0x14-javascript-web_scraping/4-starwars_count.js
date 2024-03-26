@@ -7,14 +7,13 @@ request(url, function (error, response, body) {
     const movies = JSON.parse(body).results;
     let count = 0;
 
-    for (const movie of movies) {
-      for (const character of movie.characters) {
-        if (character.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-          count++;
-          break;
+    movies.forEach((movie) => {
+      movie.characters.forEach((character) => {
+        if (character.includes(characterId)) {
+          count += 1;
         }
-      }
-    }
+      });
+    });
     console.log(count);
   }
 });
